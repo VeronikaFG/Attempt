@@ -13,3 +13,21 @@ class SearchBook extends Component {
   state = {
     results: []
   }
+
+  resetResults = () => (
+    this.setState({ results: [] })
+  )
+
+  updateResearch = (query) => (
+    BooksAPI.search(query)
+      .then(results => {
+        if (results && (!results.error)) {
+          for (const book of results) {
+            const selectedb = this.props.categorizedBook(book)
+            book.shelf = selectedb ? selectedb.shelf : 'none'
+          }
+          this.setState({ results })
+        }
+      }
+    )
+  )
