@@ -21,3 +21,32 @@ getBooks = () => {
     }))
   })
 }
+
+//Select and categorize Books
+categorizedBook = (book) => {
+  for (const selectedb of this.state.books) {
+    if (selectedb.id === book.id)
+    return selectedb
+  }
+}
+
+// Update categories of Books
+changeCategory = (book, newShelf) => {
+  BooksAPI.update(book, newShelf)
+    .then((response) => {
+      book.shelf = newShelf
+      this.getBooks()
+    })
+}
+
+selectBook = (book) => (
+  this.setState(
+    state => ({ books: state.books.concat([ book ]) })
+  )
+)
+
+removeBook = (book) => (
+  this.setState(
+    state => ({ books: state.books.filter(selectedb => selectedb.id !== book.id) })
+  )
+)
