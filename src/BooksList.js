@@ -32,7 +32,7 @@ function BooksList(props) {
             </div>
             <div className="book-title">{book.title}</div>
             <div className="book-authors">
-            {/* the BooksAPI.search method DOES search by title or author. So, don't worry if you don't find a specific author or title. Every search is limited by search terms. https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md */}
+            {/* The BooksAPI.search method DOES search by title or author. So, don't worry if you don't find a specific author or title. Every search is limited by search terms. https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md */}
               {book.authors && book.authors.join(", ")}
             </div>
           </div>
