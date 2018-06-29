@@ -31,3 +31,35 @@ class SearchBook extends Component {
       }
     )
   )
+
+  render () {
+    const { results } = this.state
+    const { changeShelf } = this.props
+
+    return (
+      <div className="search-books">
+        <div className="search-books-bar">
+          <Link
+            to='/'
+            className="close-search"
+            onClick={this.resetResults}>
+            Close
+          </Link>
+          <div className="search-books-input-wrapper">
+            <input
+              type="text"
+              placeholder="Search by title or author"
+              onChange={(event) => this.updateResearch(event.target.value)}
+            />
+          </div>
+        </div>
+        <div className="search-books-results">
+          <BooksList
+            books={results}
+            changeShelf={changeShelf}
+          />
+        </div>
+      </div>
+    )
+  }
+}
