@@ -37,7 +37,7 @@ body, .app {
 }
 
 .bookshelf-title {
-  border-bottom: 1px solid #dedede;
+  border-bottom: 4px solid #2e7c31;
 }
 .bookshelf-books {
   text-align: center;
