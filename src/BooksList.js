@@ -41,3 +41,10 @@ function BooksList(props) {
     </ol>
   )
 }
+
+BooksList.propTypes = {
+  changeShelf: PropTypes.func.isRequired,
+  books: PropTypes.array.isRequired
+}
+
+export default BooksList
