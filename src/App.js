@@ -67,4 +67,23 @@ removeBook = (book) => (
             <div className="list-books-title">
               <h1>MyReads</h1>
             </div>
-            
+
+            <div className="list-books-content">
+              <BookLibrary
+                books={this.state.books}
+                changeShelf={this.changeCategory}
+              />
+            </div>
+
+            <div className="open-search">
+              <Link to='/search'>Add a book</Link>
+            </div>
+          </div>
+        )}>
+        </Route>
+      </div>
+    )
+  }
+}
+
+export default BooksApp
