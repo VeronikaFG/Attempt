@@ -50,3 +50,21 @@ removeBook = (book) => (
     state => ({ books: state.books.filter(selectedb => selectedb.id !== book.id) })
   )
 )
+
+  render() {
+    return(
+      <div className="app">
+        <Route path='/search' render={() => (
+          <SearchBook
+            categorizedBook={this.categorizedBook}
+            changeShelf={this.changeCategory}
+          />
+        )}>
+        </Route>
+
+        <Route exact path='/' render={() => (
+          <div className="list-books">
+            <div className="list-books-title">
+              <h1>MyReads</h1>
+            </div>
+            
