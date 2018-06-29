@@ -25,3 +25,9 @@ function BookLibrary(props) {
     </div>
   )
 }
+
+BookLibrary.propTypes = {
+  changeShelf: PropTypes.func.isRequired
+}
+
+export default BookLibrary
