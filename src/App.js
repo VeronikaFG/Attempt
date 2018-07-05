@@ -30,4 +30,51 @@ class BooksApp extends React.Component {
     });
   };
 
-  
+  componentDidMount() {
+  // Get all books API
+  BooksAPI.getAll().then(data => {
+    this.setState({ books: data });
+  });
+}
+
+// Find and update Books in state
+findBooks = query => {
+  this.setState({ query: query });
+
+  if (query.length > 0) {
+    BooksAPI.search(query).then(data => {
+      this.setState({
+        userBooks: data
+      });
+    });
+  }
+};
+
+render() {
+    return (
+      <div className="app">
+        <Route
+          exact path="/"
+          render={() => (
+            <BookLibrary
+              state={this.state}
+              update={this.categorizeShelf}
+            />
+          )}
+        />
+        <Route
+          path="/search"
+          render={() => (
+            <Library
+              state={this.state}
+              update={this.categorizeShelf}
+              search={this.findBooks}
+            />
+          )}
+        />
+      </div>
+    );
+  }
+}
+
+export default BooksApp;
