@@ -70,7 +70,7 @@ class BookLibrary extends React.Component {
 }
 
 BookLibrary.propTypes = {
-  state: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  state: PropTypes.array.isRequired,
   update: PropTypes.func
 };
 
