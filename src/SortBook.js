@@ -13,17 +13,15 @@ class SortBook extends React.Component {
           <li key={Book.id}>
             <div className="book">
               <div className="book-top">
-                {/* Find images-style-titile books */}
-                {Book.imageLinks && (
-                  <img src={Book.imageLinks.thumbnail}
-                    alt={Book.title}
-                    className="book-cover"
-                    style={{
-                      width: 128,
-                      height: 193
-                    }}
-                  />
-                )}
+                {/* Find images-style-title books */}
+                <div
+                  className="book-cover"
+                  style={{
+                    width: 128,
+                    height: 193,
+                    backgroundImage: `url(${Book.imageLinks.thumbnail})`
+                  }}>
+                </div>
 
                 <div className="book-shelf-changer">
                   {/* If a book is not categorized, set category "none" */}
