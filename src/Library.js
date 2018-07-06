@@ -10,7 +10,7 @@ class Library extends React.Component {
   }
 
   render() {
-    // Destructure props object
+    // Declaration functions
     const { state, update, search } = this.props;
 
     return (
@@ -21,7 +21,7 @@ class Library extends React.Component {
             Close
           </Link>
           <div className="search-books-input-wrapper">
-            {/* Search by title or author */}
+            {/* Search by author/title */}
             <input
               type="text"
               placeholder="Search by title or author"
