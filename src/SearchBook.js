@@ -27,17 +27,15 @@ class SearchBook extends React.Component {
           <li key={Book.id}>
             <div className="book">
               <div className="book-top">
-
-                {Book.imageLinks && (
-                  <img src={Book.imageLinks.thumbnail}
-                    className="book-cover"
-                    alt={Book.title}
-                    style={{
-											width: 128,
-											height: 192
-										}}
-                  />
-                )}
+                {/* Find images-style-title books */}
+                <div
+                  className="book-cover"
+                  style={{
+                    width: 128,
+                    height: 193,
+                    backgroundImage: `url(${Book.imageLinks.thumbnail})`
+                  }}>
+                </div>
 
                 <div className="book-shelf-changer">
                   {/* If a book is not categorized, set category "none" */}
