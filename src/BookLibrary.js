@@ -70,7 +70,7 @@ class BookLibrary extends React.Component {
 }
 
 BookLibrary.propTypes = {
-  state: PropTypes.array.isRequired,
+  state: PropTypes.object.isRequired,
   update: PropTypes.func
 };
 
