@@ -14,14 +14,29 @@ class SortBook extends React.Component {
             <div className="book">
               <div className="book-top">
                 {/* Find images-style-title books */}
+                {Book.imageLinks && (
                 <div
                   className="book-cover"
                   style={{
                     width: 128,
                     height: 193,
                     backgroundImage: `url(${Book.imageLinks.thumbnail})`
-                  }}>
+                  }}
+                >
                 </div>
+                )}
+                {Book.imageLinks === undefined && (
+                <div
+                  className="book-cover"
+                  style={{
+                    width: 128,
+                    height: 193,
+                    backgroundImage: `http://via.placeholder.com/128x193?text=No%20Cover`
+                  }}
+                >
+                  {/*No books found in library*/}
+                </div>
+                )}
 
                 <div className="book-shelf-changer">
                   {/* If a book is not categorized, set category "none" */}
